@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Top Navigation Bar -->
+    <nav>
+        <!-- responsive menu icon -->
+        <div class="menu-icon">
+            <span class="fas fa-bars"></span>
+        </div>
+        <!-- logo -->
+        <div class="logo">CodingNepal</div>
+        <!--  navigation items -->
+        <ul class="nav-items">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <!-- responsive search icon -->
+        <div class="search-icon">
+            <span class="fas fa-search"></span>
+        </div>
+        <!-- responsive search cancel icon -->
+        <div class="cancel-icon">
+            <span class="fas fa-times"></span>
+        </div>
+        <form action="">
+            <input type="search" class="search-data" placeholder="Search" required>
+            <button type="submit" class="fas fa-search search-btn"></button>
+        </form>
+    </nav>
+    <!-- script -->
+    <script>
+        const menuBtn = document.querySelector(".menu-icon span");
+        const searchBtn = document.querySelector(".search-icon");
+        const cancelBtn = document.querySelector(".cancel-icon");
+        const items = document.querySelector(".nav-items");
+        const form = document.querySelector("nav form");
+
+
+        cancelBtn.style.color = "#ff3d00";
+
+        menuBtn.onclick = () => {
+            items.classList.add("active");
+            menuBtn.classList.add("hide");
+            searchBtn.classList.add("hide");
+            cancelBtn.classList.add("show");
+        }
+        cancelBtn.onclick = () => {
+            items.classList.remove("active");
+            menuBtn.classList.remove("hide");
+            searchBtn.classList.remove("hide");
+            cancelBtn.classList.remove("show");
+            form.classList.remove("active");
+        }
+
+        searchBtn.onclick = () => {
+            menuBtn.classList.add("hide");
+            cancelBtn.classList.add("show");
+            searchBtn.classList.add("hide");
+            form.classList.add("active");
+        }
+
+    </script>
+</body>
+
+</html>

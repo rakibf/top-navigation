@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+    height: 70px;
+    background: rgba(34, 0, 34, 0.925);
+}
+.logo {
+    letter-spacing: -1px;
+    font-size: 32px;
+    font-weight: 600;
+    color: white;
+}
+.nav-items {
+    display: flex;
+    flex-grow: 1;
+    margin: 0 0 0 40px;
+    list-style: none;
+}
+.nav-items li {
+    margin: 0 15px;
+}
+.nav-items a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+}
+.search {
+    min-width: 18% !important;
+    display: flex;
+    height: 40px;
+    border: 1px solid red;
+    border-radius: 2px;
+    padding: 2px;
+}
+.search-data {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    color: white;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 0 5px;
+}
+.search-btn {
+    padding: 0 15px;
+    font-size: 17px;
+    cursor: pointer;
+    background: yellowgreen;
+    border: none;
+    border-radius: 2px;
+    color: white;
+}
+.menu-icon, .search-icon, .cross-icon {
+    color: white;
+    font-size: 18px;
+    width: 40px;
+    text-align: center;
+    margin: 0 50px;
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: 1245px) {
+    nav {
+        padding: 0 50px;
+    }
+}
+@media (max-width: 1140px) {
+    nav {
+        padding: 0;
+    }
+    .logo {
+        flex-grow: 1;
+        text-align: center;
+    }
+    .menu-icon, .search-icon {
+        display: block;
+    }
+    .menu-icon.hide {
+        display: none;
+    }
+    .search {
+        position: absolute;
+        top: 95px;
+        right: 50px;
+        /* z-index: 99; */
+        background: black;
+    }
+
+    .search::before {
+        content: "";
+        position: absolute;
+        top: -13px;
+        right: 0;
+        height: 0;
+        width: 0;
+        z-index: -1;
+        margin: -20px 0;
+        border: 10px solid transparent;
+        border-bottom-color: red;
+    }
+    .search::after {
+        content: "";
+        position: absolute;
+        width: calc(100% + 20px);
+        height: 60px;
+        background-color: rgb(12, 12, 12);
+        top: 50%;
+        left: 50%;
+        padding: 2px;
+        border-radius: 2px;
+        transform: translate(-50%, -50%);
+        z-index: -2;
+    }
+
+    .nav-items {
+        position: fixed;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: black;
+        display: inline-block;
+        text-align: center;
+        display: none;
+    }
+
+    .nav-items.active {
+        display: block;
+    }
+
+    .nav-items li {
+        margin: 40px;
+    }
+
+}
